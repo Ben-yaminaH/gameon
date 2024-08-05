@@ -28,6 +28,7 @@ function closeModal() {
   modalbg.style.display = "none";
 }
 
+
 function launchModal2() {
   modalbg2.style.display = "block";
 }
@@ -40,11 +41,9 @@ function closeModal2() {
 
 function formulaire() {
 
-
-  //variable de validation des champs
+  //variable de validation de champs
 
   let validation = 0;
-
 
   // Prénom
 
@@ -84,9 +83,10 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('nom');
-      name_alert.insertAdjacentHTML('afterend', "<div id='surname_alert'>Veuillez entrer 2 caractères ou plus pour le champ nom</div>");
+      var surname_alert = document.getElementById('nom');
+      surname_alert.insertAdjacentHTML('afterend', "<div id='surname_alert'>Veuillez entrer 2 caractères ou plus pour le champ nom</div>");
     }
+
   }
 
   else {
@@ -96,7 +96,6 @@ function formulaire() {
     validation = validation + 1;
   }
 
-
   // Email
 
   let baliseemail = document.getElementById("email");
@@ -105,13 +104,14 @@ function formulaire() {
   let result = email.match(emailRegexp);
   console.log(email);
 
+
   if (email != result) {
 
     if (document.getElementById("email_alert")) {
     }
     else {
-      var name_alert = document.getElementById('adressemail');
-      name_alert.insertAdjacentHTML('afterend', "<div id='email_alert'>Veuillez vérifier le format de l'email</div>");
+      var email_alert = document.getElementById('adressemail');
+      email_alert.insertAdjacentHTML('afterend', "<div id='email_alert'>Veuillez vérifier le format de l'email</div>");
     }
   }
 
@@ -121,7 +121,6 @@ function formulaire() {
     } else { }
     validation = validation + 1;
   }
-
 
   // Date de naissance
 
@@ -135,9 +134,10 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('naissance');
-      name_alert.insertAdjacentHTML('afterend', "<div id='naissance_alert'>Vous devez choisir une option</div>");
+      var birthdate_alert = document.getElementById('naissance');
+      birthdate_alert.insertAdjacentHTML('afterend', "<div id='naissance_alert'>Vous devez choisir une option</div>");
     }
+
   }
 
   else {
@@ -147,13 +147,11 @@ function formulaire() {
     validation = validation + 1;
   }
 
-
   // Nombre tournoi
 
   let balisenbrtournoi = document.getElementById("quantity");
   let nbrtournoi = balisenbrtournoi.value;
   const nbrtournoiRegexp = new RegExp("^[0-9]+$");
-
   console.log(nbrtournoi);
 
   if ((nbrtournoi === "") && (nbrtournoi != nbrtournoiRegexp)) {
@@ -162,9 +160,10 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('nbrtournoi');
-      name_alert.insertAdjacentHTML('afterend', "<div id='nbrtournoi_alert'>Veuillez indiquer un nombre de tournoi</div>");
+      var nbrtournoi_alert = document.getElementById('nbrtournoi');
+      nbrtournoi_alert.insertAdjacentHTML('afterend', "<div id='nbrtournoi_alert'>Veuillez indiquer un nombre</div>");
     }
+
   }
 
   else {
@@ -173,7 +172,6 @@ function formulaire() {
     } else { }
     validation = validation + 1;
   }
-
 
   // Quelle tournoi
 
@@ -192,9 +190,10 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('tournoi');
-      name_alert.insertAdjacentHTML('afterend', "<div id='tournoi_alert'>Veuillez faire un choix</div>");
+      var tournoi_alert = document.getElementById('tournoi');
+      tournoi_alert.insertAdjacentHTML('afterend', "<div id='tournoi_alert'>Veuillez faire un choix</div>");
     }
+
   }
 
   else {
@@ -205,7 +204,6 @@ function formulaire() {
   }
 
   console.log(tournoi);
-
 
   // Condition utilisation
 
@@ -219,9 +217,10 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('condition');
-      name_alert.insertAdjacentHTML('afterend', "<div id='condition_alert'>Vous devez vérifier que vous acceptez les termes et conditions</div>");
+      var condition_alert = document.getElementById('condition');
+      condition_alert.insertAdjacentHTML('afterend', "<div id='condition_alert'>Vous devez vérifier que vous acceptez les termes et conditions</div>");
     }
+
   }
 
   else {
@@ -230,7 +229,6 @@ function formulaire() {
     } else { }
     validation = validation + 1;
   }
-
 
   // Infos evenement
 
@@ -250,10 +248,12 @@ function formulaire() {
     balisenbrtournoi.value = "";
     balisechoixtournoi.value = "";
     baliseutilisation.value = "";
-    baliseevenement.value = "";
+
   }
   else {
+
   }
+
   console.log(validation)
 
 }
