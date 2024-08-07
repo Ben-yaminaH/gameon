@@ -1,5 +1,5 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -58,7 +58,7 @@ function formulaire() {
 
     }
     else {
-      var name_alert = document.getElementById('prenom');
+      let name_alert = document.getElementById('prenom');
       name_alert.insertAdjacentHTML('afterend', "<div id='name_alert'>Veuillez entrer 2 caractères ou plus pour le champ prénom</div>");
     }
   }
@@ -83,7 +83,7 @@ function formulaire() {
 
     }
     else {
-      var surname_alert = document.getElementById('nom');
+      let surname_alert = document.getElementById('nom');
       surname_alert.insertAdjacentHTML('afterend', "<div id='surname_alert'>Veuillez entrer 2 caractères ou plus pour le champ nom</div>");
     }
 
@@ -110,7 +110,7 @@ function formulaire() {
     if (document.getElementById("email_alert")) {
     }
     else {
-      var email_alert = document.getElementById('adressemail');
+      let email_alert = document.getElementById('adressemail');
       email_alert.insertAdjacentHTML('afterend', "<div id='email_alert'>Veuillez vérifier le format de l'email</div>");
     }
   }
@@ -134,7 +134,7 @@ function formulaire() {
 
     }
     else {
-      var birthdate_alert = document.getElementById('naissance');
+      let birthdate_alert = document.getElementById('naissance');
       birthdate_alert.insertAdjacentHTML('afterend', "<div id='naissance_alert'>Vous devez choisir une option</div>");
     }
 
@@ -160,7 +160,7 @@ function formulaire() {
 
     }
     else {
-      var nbrtournoi_alert = document.getElementById('nbrtournoi');
+      let nbrtournoi_alert = document.getElementById('nbrtournoi');
       nbrtournoi_alert.insertAdjacentHTML('afterend', "<div id='nbrtournoi_alert'>Veuillez indiquer un nombre</div>");
     }
 
@@ -190,7 +190,7 @@ function formulaire() {
 
     }
     else {
-      var tournoi_alert = document.getElementById('tournoi');
+      let tournoi_alert = document.getElementById('tournoi');
       tournoi_alert.insertAdjacentHTML('afterend', "<div id='tournoi_alert'>Veuillez faire un choix</div>");
     }
 
@@ -217,7 +217,7 @@ function formulaire() {
 
     }
     else {
-      var condition_alert = document.getElementById('condition');
+      let condition_alert = document.getElementById('condition');
       condition_alert.insertAdjacentHTML('afterend', "<div id='condition_alert'>Vous devez vérifier que vous acceptez les termes et conditions</div>");
     }
 
@@ -246,9 +246,10 @@ function formulaire() {
     baliseemail.value = "";
     balisenaissance.value = "";
     balisenbrtournoi.value = "";
-    balisechoixtournoi.value = "";
+    for (let i = 0; i < balisechoixtournoi.length; i++){
+      balisechoixtournoi[i].checked = false;
+    }
     baliseutilisation.value = "";
-
   }
   else {
 
